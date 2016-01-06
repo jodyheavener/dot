@@ -1,0 +1,28 @@
+[user]
+  name = Jody Heavener
+  email = j.heavener@gmail.com
+
+[core]
+  excludesfile = ~/.gitignore
+  editor = subl -n -w
+
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+
+[push]
+  default = simple
+  followTags = true
+
+[branch]
+  autosetuprebase = always
+
+[merge]
+  log = true
+
+[rebase]
+  autosquash = true
+
+[help]
+  autocorrect = 1
