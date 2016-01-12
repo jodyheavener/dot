@@ -36,7 +36,11 @@ unsetopt correct_all
 alias zshconfig="subl ~/.zshrc"
 alias zshenv="subl ~/.zshenv"
 
+# Source relevent dotfiles
 for file in ~/.{aliases,exports,functions}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
+
+# Load up a ruby version
+rb230
