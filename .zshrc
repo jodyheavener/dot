@@ -13,7 +13,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load?
 # Look in ~/.oh-my-zsh/plugins/
-plugins=(git)
+plugins=(git osx node npm brew colorize dirpersist gem)
 
 # User configuration
 
@@ -35,3 +35,8 @@ unsetopt correct_all
 # Keeping these aliases here
 alias zshconfig="subl ~/.zshrc"
 alias zshenv="subl ~/.zshenv"
+
+for file in ~/.{aliases,exports,functions}; do
+    [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
