@@ -73,3 +73,12 @@ function o() {
     open "$@";
   fi;
 }
+
+killport() {
+  if [ -z "$1" ]; then
+    echo "Usage: killport [numeric port identifier]" >&2
+    return 1
+  fi
+  lsof -i TCP:$1 | awk '/LISTEN/{print $2}' | xargs kill -9
+  echo "Port" $1 "found and killed."
+}
