@@ -8,6 +8,7 @@ alias tags="gp origin --tags"
 alias rbsys='rbenv shell system && echo "Ruby version set to $(ruby -v)"'
 alias rb200='rbenv shell 2.0.0-p247 && echo "Ruby version set to $(ruby -v)"'
 alias rb214='rbenv shell 2.1.4 && echo "Ruby version set to $(ruby -v)"'
+alias rb224='rbenv shell 2.2.4 && echo "Ruby version set to $(ruby -v)"'
 alias rb230='rbenv shell 2.3.0 && echo "Ruby version set to $(ruby -v)"'
 
 # Rails logs
