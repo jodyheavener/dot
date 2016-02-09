@@ -7,6 +7,7 @@ bump() {
 sts() { git stash save "$1" }
 sta() { git stash apply stash@{$1} }
 stl() { git stash list }
+std() { git stash drop stash@{$1} }
 
 # Create a new directory and enter it
 function mkd() {
