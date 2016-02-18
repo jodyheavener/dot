@@ -1,8 +1,9 @@
-# Get to iCloud repositories
-alias repos="cd /Users/jodyheavener/Library/Mobile\ Documents/com~apple~CloudDocs/Repositories"
+# Get to Google Drive repositories
+alias repos="cd /Users/jodyheavener/Google\ Drive/Repositories"
 
 # Git tags
 alias tags="gp origin --tags"
+alias aa="git add --all"
 
 # Quick access to rbenv versions
 alias rbsys='rbenv shell system && echo "Ruby version set to $(ruby -v)"'
