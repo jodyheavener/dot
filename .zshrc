@@ -44,3 +44,6 @@ unset file;
 
 # Load up a ruby version
 rb230
+export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
+export PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"

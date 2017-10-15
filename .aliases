@@ -1,5 +1,5 @@
 # Get to Google Drive repositories
-alias repos="cd /Users/jodyheavener/Google\ Drive/Repositories"
+alias repos="cd /Users/jodyheavener/Drive/Repositories"
 
 # Git tags
 alias tags="gp origin --tags"

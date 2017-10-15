@@ -83,3 +83,19 @@ killport() {
   lsof -i TCP:$1 | awk '/LISTEN/{print $2}' | xargs kill -9
   echo "Port" $1 "found and killed."
 }
+
+file_test() {
+  if [[ -n $2 ]]; then
+    bundle exec ./bin/rake test TEST="$1" TESTOPTS="-n /$2/"
+  else
+    bundle exec ./bin/rake test TEST="$1"
+  fi
+}
+
+file_rspec() {
+  if [[ -n $2 ]]; then
+    bundle exec rspec "$1" -e "$2"
+  else
+    bundle exec rspec "$1"
+  fi
+}
