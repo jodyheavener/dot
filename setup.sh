@@ -31,7 +31,7 @@ link() {
 }
 
 begin() {
-  exclusions=(".DS_Store" "README.md", "setup.sh", ".git")
+  exclusions=(".DS_Store" "README.md", "setup.sh", ".git", "brew-list")
 
   # Symlink all the things
   user "Symlinking dotfiles."

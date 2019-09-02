@@ -1,0 +1,27 @@
+apr                  gdbm                   libev             memcached     python
+apr-util             gdk-pixbuf             libevent          mhash         python3
+argon2               gettext                libffi            mongodb       python@2
+aspell               gifski                 libgpg-error      mpfr          rbenv
+atk                  git                    libidn            mysql         readline
+autoconf             git-extras             libidn2           nasm          redis
+automake             glib                   libimobiledevice  netpbm        rtmpdump
+aws-elasticbeanstalk gmp                    libksba           nghttp2       ruby-build
+awscli               go                     libmetalink       nmap          serverless
+brotli               graphite2              libmpc            node          shtool
+c-ares               graphviz               libogg            opencore-amr  speex
+cairo                gtk+                   libplist          openjpeg      sqlite
+composer             gts                    libpng            openldap      stripe
+coreutils            harfbuzz               libpq             openssl       texi2html
+curl-openssl         heroku                 libsodium         openssl@1.1   themekit
+dnsmasq              heroku-node            libssh2           opus          theora
+elasticsearch        hicolor-icon-theme     libtasn1          pango         tidy-html5
+elasticsearch@2.4    icu4c                  libtiff           pcre          unixodbc
+fdk-aac              imagemagick@6          libtool           pcre2         usbmuxd
+ffmpeg               ios-webkit-debug-proxy libunistring      phantomjs     webp
+figlet               isl                    libusb            php           wget
+fontconfig           jansson                libvorbis         php@7.1       x264
+freetds              jasper                 libvpx            php@7.2       xvid
+freetype             jemalloc               libyaml           phplint       xz
+frei0r               jpeg                   libzip            pixman        yarn
+fribidi              lame                   little-cms2       pkg-config    zsh
+gd                   libass                 mcrypt            postgresql

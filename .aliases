@@ -1,5 +1,5 @@
 # Get to Google Drive repositories
-alias repos="cd /Users/jody/Drive/Repositories"
+alias repos="cd /Users/jody/Documents/Repositories"
 
 # ZSH config
 alias zshconfig="subl ~/.zshrc"
@@ -42,3 +42,9 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Edit /etc/hosts file
 alias hosts="sudo subl /private/etc/hosts"
+
+# Start psql with standard Docker credentials
+alias dpsql="psql --host=0.0.0.0 postgres postgres"
+
+# Run a Rails command with Foreman so you can use env vars
+alias fr="foreman run rails"

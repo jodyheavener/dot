@@ -55,3 +55,8 @@ function file_rspec() {
     bundle exec rspec "$1"
   fi
 }
+
+# Quick branch off with prefix
+function branch() {
+  git checkout -b jh-$1
+}
