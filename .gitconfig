@@ -1,6 +1,8 @@
 [user]
   name = Jody Heavener
   email = j.heavener@gmail.com
+  # On a new machine this needs to be updated
+  signingkey = 065C43AE0EE5A19A
 
 [core]
   excludesfile = ~/.gitignore
@@ -32,5 +34,12 @@
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
+
 [alias]
   lease = push --force-with-lease
+
+[gpg]
+  program = gpg
+
+[commit]
+  gpgsign = true

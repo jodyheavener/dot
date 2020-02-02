@@ -1,27 +1,146 @@
-apr                  gdbm                   libev             memcached     python
-apr-util             gdk-pixbuf             libevent          mhash         python3
-argon2               gettext                libffi            mongodb       python@2
-aspell               gifski                 libgpg-error      mpfr          rbenv
-atk                  git                    libidn            mysql         readline
-autoconf             git-extras             libidn2           nasm          redis
-automake             glib                   libimobiledevice  netpbm        rtmpdump
-aws-elasticbeanstalk gmp                    libksba           nghttp2       ruby-build
-awscli               go                     libmetalink       nmap          serverless
-brotli               graphite2              libmpc            node          shtool
-c-ares               graphviz               libogg            opencore-amr  speex
-cairo                gtk+                   libplist          openjpeg      sqlite
-composer             gts                    libpng            openldap      stripe
-coreutils            harfbuzz               libpq             openssl       texi2html
-curl-openssl         heroku                 libsodium         openssl@1.1   themekit
-dnsmasq              heroku-node            libssh2           opus          theora
-elasticsearch        hicolor-icon-theme     libtasn1          pango         tidy-html5
-elasticsearch@2.4    icu4c                  libtiff           pcre          unixodbc
-fdk-aac              imagemagick@6          libtool           pcre2         usbmuxd
-ffmpeg               ios-webkit-debug-proxy libunistring      phantomjs     webp
-figlet               isl                    libusb            php           wget
-fontconfig           jansson                libvorbis         php@7.1       x264
-freetds              jasper                 libvpx            php@7.2       xvid
-freetype             jemalloc               libyaml           phplint       xz
-frei0r               jpeg                   libzip            pixman        yarn
-fribidi              lame                   little-cms2       pkg-config    zsh
-gd                   libass                 mcrypt            postgresql
+adns
+apr
+apr-util
+argon2
+aspell
+atk
+autoconf
+automake
+aws-elasticbeanstalk
+awscli
+brotli
+c-ares
+cairo
+composer
+coreutils
+curl-openssl
+dnsmasq
+elasticsearch
+elasticsearch@2.4
+fdk-aac
+ffmpeg
+figlet
+fontconfig
+freetds
+freetype
+frei0r
+fribidi
+gd
+gdbm
+gdk-pixbuf
+gettext
+gifski
+git
+git-extras
+glib
+gmp
+gnupg
+gnutls
+go
+graphicsmagick
+graphite2
+graphviz
+gtk+
+gts
+harfbuzz
+heroku
+heroku-node
+hicolor-icon-theme
+icu4c
+imagemagick@6
+ios-webkit-debug-proxy
+isl
+jansson
+jasper
+jemalloc
+jpeg
+lame
+libass
+libassuan
+libev
+libevent
+libffi
+libgcrypt
+libgpg-error
+libidn
+libidn2
+libimobiledevice
+libksba
+libmetalink
+libmpc
+libogg
+libplist
+libpng
+libpq
+libsodium
+libssh2
+libtasn1
+libtiff
+libtool
+libunistring
+libusb
+libusbmuxd
+libvorbis
+libvpx
+libyaml
+libzip
+little-cms2
+mcrypt
+memcached
+mhash
+mpfr
+mysql
+nasm
+netpbm
+nettle
+nghttp2
+ngrep
+nmap
+node
+npth
+opencore-amr
+openjpeg
+openldap
+openssl
+openssl@1.1
+opus
+p11-kit
+pango
+pcre
+pcre2
+php
+php@7.1
+php@7.2
+phplint
+pinentry
+pinentry-mac
+pixman
+pkg-config
+postgresql
+python
+python3
+python@2
+rbenv
+readline
+redis
+rtmpdump
+ruby-build
+serverless
+shtool
+speex
+sqlite
+stripe
+texi2html
+themekit
+theora
+tidy-html5
+unbound
+unixodbc
+usbmuxd
+webp
+wget
+x264
+xvid
+xz
+yarn
+zsh

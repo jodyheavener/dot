@@ -1,30 +1,7 @@
-# Jody's Dot Files
+# Jody's macOS Setup
 
-Make sure you look through everything and tailor it to your needs first.
+If you're not Jody, make sure you look through everything and tailor it to your needs first.
 
-Just run `sh setup.sh` and follow the prompts. Restart your computer after.
+Just run `sh setup.sh` and follow the prompts. Restart your computer after. You can run it in sudo if you want, but Brew will fail.
 
-### Also install
-
-- nvm
-- rbenv
-- brew (see `brew-list`)
-- Docker
-- Lando
-
-### Manual setups
-
-- SSH (`~/.ssh`)
-- AWS (`~/.aws/credentials`):
-
-  ```
-  [default]
-  aws_access_key_id = ACCESS_KEY
-  aws_secret_access_key = SECRET_KEY
-
-  [environment]
-  aws_access_key_id = ACCESS_KEY
-  aws_secret_access_key = SECRET_KEY
-
-  ...
-  ```
+Check out apps-list for apps that you might want to manually install.
