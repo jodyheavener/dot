@@ -32,3 +32,12 @@ function killport() {
 function branch() {
   git checkout -b jh-$1
 }
+
+# Work on a repo project
+# Opens in Sublime, CDs in, git statuses
+function workon() {
+  repos;
+  cd $1;
+  git status;
+  subl --add $PWD;
+}
