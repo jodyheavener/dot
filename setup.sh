@@ -87,11 +87,11 @@ function setup() {
   zsh ./.osx
   info "macOS preferences updated. A restart is recommended."
 
-  info "If this is a brand new machine you probably also want to set up SSH keys (also update your git signing key)"
   info "Reloading ZSH..."
   exec zsh;
 
   success "All done!"
+  info "You may also want to set up SSH keys (+ Git signing key), install Yarn packages (yarn-list), and install some apps (apps-list)."
 }
 
 # macOS Only
