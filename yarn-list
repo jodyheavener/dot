@@ -1,0 +1,13 @@
+# This file does nothing. It's just a list of modules that may need to be installed globally through yarn (or npm).
+
+grunt
+gulp
+intern
+localtunnel
+pm2
+prettier
+sass-lint
+skpm
+webpack
+webpack-cli
+yo

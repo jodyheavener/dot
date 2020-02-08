@@ -29,3 +29,6 @@ export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
 
 # Fastlane
 export PATH="$HOME/.fastlane/bin:$PATH"
+
+# Yarn
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
