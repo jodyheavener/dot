@@ -78,10 +78,10 @@ function setup() {
   rbenv install 2.6.5 && rbenv global 2.6.5;
 
   # Now let's install nvm and the default global version
-  # We're going with version v12.14.1 for now, but this could be updated at a later time
+  # We're going with version v10.19.0 for now, but this could be updated at a later time
   info "Setting up nvm."
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash;
-  nvm install v12.14.1 && nvm alias default v12.14.1;
+  nvm install v10.19.0 && nvm alias default v10.19.0;
 
   info "Loading macOS preferences. You may need to enter your password."
   zsh ./.osx
