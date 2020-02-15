@@ -38,6 +38,32 @@ function branch() {
 function workon() {
   repos;
   cd $1;
-  git status;
+
+  if [ $(git rev-parse --is-inside-work-tree 2>/dev/null) ]; then
+    git status;
+    openrepo
+  fi;
+
   subl --add $PWD;
+}
+
+# Open the remote origin, probably github
+function openrepo() {
+  if [ $(git rev-parse --is-inside-work-tree 2>/dev/null) ]; then
+    origin_remote="$(git config --get remote.origin.url)"
+
+    if [[ $origin_remote =~ "https://" ]]; then
+      # Great! Open the HTTPS address
+    else;
+      origin_remote=${origin_remote/git@/"https://"}
+      origin_remote=${origin_remote/com:/"com/"}
+    fi;
+
+    open -a "Firefox Developer Edition" $origin_remote
+  fi;
+}
+
+# Add a repo to sublime
+function subladd() {
+  subl --add "/Users/jody/Downloads/Repositories/$1";
 }
