@@ -67,3 +67,35 @@ function openrepo() {
 function subladd() {
   subl --add "/Users/jody/Downloads/Repositories/$1";
 }
+
+function git {
+  if [[ "$1" == "push" ]]; then
+    force=false
+    override=false
+
+    for param in "$@"; do
+      if [[ $param == "--force" ]]; then force=true; fi
+      if [[ $param == "--seriously" ]]; then override=true; fi
+    done
+
+    if [[ "$force" = true && "$override" = false ]]; then
+      echo -e "\033[0;33mDetected use of --force! Using --force-with-lease instead. If you're absolutely sure you can override with --force --seriously.\033[0m"
+
+      for param; do
+        [[ "$param" = --force ]] || set -- "$@" "$param"; shift
+      done
+
+      set -- "push" "$@" "--force-with-lease"; shift
+    else
+      if [[ "$override" = true ]]; then
+        echo -e "\033[0;33mHeads up! Using --force and not --force-with-lease.\033[0m"
+      fi
+
+      for param; do
+        [[ "$param" = --seriously ]] || set -- "$@" "$param"; shift
+      done
+    fi
+  fi
+
+  command git "$@"
+}
