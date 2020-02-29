@@ -81,7 +81,7 @@ function setup() {
   # We're going with version v10.19.0 for now, but this could be updated at a later time
   info "Setting up nvm."
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash;
-  nvm install v10.19.0 && nvm alias default v10.19.0;
+  nvm install v12.16.1 && nvm alias default v12.16.1;
 
   info "Loading macOS preferences. You may need to enter your password."
   zsh ./.osx
