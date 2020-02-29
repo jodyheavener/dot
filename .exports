@@ -18,9 +18,9 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
 # Golang
-export GOPATH=$(go env GOPATH)
-export PATH=$PATH:$(go env GOPATH)/bin
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
+# export GOPATH=$(go env GOPATH)
+# export PATH=$PATH:$(go env GOPATH)/bin
+# export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 # Android Dev
 export ANDROID_HOME=$HOME/Library/Android/Sdk
