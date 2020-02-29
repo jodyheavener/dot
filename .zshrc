@@ -57,7 +57,7 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(brew bundler colorize gem git-extras git heroku)
 
-source $ZSH
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
