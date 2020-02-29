@@ -2,7 +2,7 @@
   name = Jody Heavener
   email = j.heavener@gmail.com
   # On a new machine this needs to be updated
-  signingkey = 065C43AE0EE5A19A
+  signingkey = E18320EE42109F37
 
 [core]
   excludesfile = ~/.gitignore
