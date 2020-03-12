@@ -30,7 +30,7 @@ function killport() {
 
 # Quick branch off with prefix
 function branch() {
-  git checkout -b jh-$1
+  git checkout -b jh/$1
 }
 
 # Work on a repo project
