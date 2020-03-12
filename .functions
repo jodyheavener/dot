@@ -65,7 +65,7 @@ function openrepo() {
 
 # Add a repo to sublime
 function subladd() {
-  subl --add "/Users/jodyheavener/Downloads/Repositories/$1";
+  subl --add "/Users/jodyheavener/Documents/Repositories/$1";
 }
 
 function git {
