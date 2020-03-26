@@ -3,8 +3,8 @@
 alias repos="cd /Users/jodyheavener/Documents/Repositories"
 
 # ZSH config
-alias zshconfig="subl ~/.zshrc"
-alias zshenv="subl ~/.zshenv"
+alias zshconfig="code ~/.zshrc"
+alias zshenv="code ~/.zshenv"
 
 # Locate conflicts in git repos
 alias findconflicts="grep -lr '<<<<<<<' ."
@@ -42,7 +42,7 @@ alias ding="tput bel"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # Edit /etc/hosts file
-alias hosts="sudo subl /private/etc/hosts"
+alias hosts="sudo code /private/etc/hosts"
 
 # Run a Rails command with Foreman so you can use env vars
 alias fr="foreman run rails"

@@ -1,8 +1,8 @@
 # Make sublime the default editor.
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='subl'
+  export EDITOR='code'
 else
-  export EDITOR='subl -w'
+  export EDITOR='code -w'
 fi
 
 # Prefer US English and use UTF-8.
