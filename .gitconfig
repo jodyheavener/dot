@@ -1,6 +1,7 @@
 [user]
   name = Jody Heavener
 	email = j.heavener@gmail.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMv/zItG3udQKlHGsLu/g4TxcQNclMD4ZKFy34jII5hU
 
 [core]
   excludesfile = ~/.gitignore
