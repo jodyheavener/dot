@@ -1,7 +1,7 @@
 [user]
   name = Jody Heavener
 	email = j.heavener@gmail.com
-  # signingkey = UPDATE_ME
+  signingkey = 065C43AE0EE5A19A
 
 [core]
   excludesfile = ~/.gitignore
@@ -41,7 +41,7 @@
 	program = gpg
 
 [commit]
-	# gpgsign = true
+	gpgsign = true
   template = ~/.git_commit_template
 
 [rerere]
