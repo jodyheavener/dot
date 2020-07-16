@@ -9,6 +9,9 @@ function sta() { git stash apply stash@{$1} }
 function stl() { git stash list }
 function std() { git stash drop stash@{$1} }
 
+function gcf() { git commit --fixup $1 }
+function grf() { git rebase -i --autosquash }
+
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
   local port="${1:-8000}";

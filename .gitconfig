@@ -1,6 +1,6 @@
 [user]
   name = Jody Heavener
-  email = j.heavener@gmail.com
+	email = j.heavener@gmail.com
   # On a new machine this needs to be updated
   signingkey = E18320EE42109F37
 
@@ -43,6 +43,7 @@
 
 [commit]
 	gpgsign = true
+  template = ~/.git_commit_template
 
 [rerere]
 	enabled = true
