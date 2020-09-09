@@ -1,7 +1,7 @@
 [user]
   name = Jody Heavener
 	email = j.heavener@gmail.com
-  signingkey = E18320EE42109F37
+  signingkey = D782DB97B41AC82D
 
 [core]
   excludesfile = ~/.gitignore
