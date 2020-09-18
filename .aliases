@@ -46,3 +46,6 @@ alias hosts="sudo code /private/etc/hosts"
 
 # Run a Rails command with Foreman so you can use env vars
 alias fr="foreman run rails"
+
+# LLVM
+export PATH="/usr/local/opt/llvm/bin:$PATH"
