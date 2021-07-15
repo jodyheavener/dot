@@ -102,3 +102,8 @@ function git {
 
   command git "$@"
 }
+
+# Shortcut for Yarn Workspace
+function yw() {
+  yarn workspace $1
+}

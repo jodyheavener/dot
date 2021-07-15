@@ -38,3 +38,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # FXA
 export FXA_AUTO_INSTALL=0
+
+# Poetry
+export PATH="$HOME/.poetry/bin:$PATH"
+
+# IDK
+export CPATH=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include
