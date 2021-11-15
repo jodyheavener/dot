@@ -55,7 +55,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew bundler colorize gem git-extras git heroku zsh-autosuggestions)
+plugins=(brew bundler colorize gem git-extras git heroku)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -81,6 +81,9 @@ eval "$(pyenv init -)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+autoload -U add-zsh-hook
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
 
 #SSH
 ssh-add -A 2>/dev/null
