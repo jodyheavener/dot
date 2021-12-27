@@ -53,8 +53,8 @@ function setup() {
 
   # Symlink/copy all the things
   info "Symlinking and copying dotfiles."
-  symlinkable_entries=(.iterm2 .aliases .exports .functions .gitconfig .gitignore .zshrc)
-  copiable_entries=(.aws)
+  symlinkable_entries=(.aliases .exports .functions .gitconfig .gitignore .zshrc .git_commit_template)
+  copiable_entries=()
 
   for entry in .[^.]*; do
     if [ $(contains "${symlinkable_entries[@]}" "$entry") == true ]; then
@@ -66,24 +66,13 @@ function setup() {
       rm -r -f "$HOME/$entry"
       cp -r "`pwd`/$entry" "$HOME/$entry"
     fi
-
-    if [ $entry == '.aws' ]; then
-      info "After this is finished please set up your AWS config file at $HOME/$entry/credentials"
-    fi
   done
 
-  # We installed rbenv in the previous Brew step, so let's set the default global version
-  # We're going with version v2.6.5 for now, but this could be updated at a later time
-  # DISABLED because I don't really use Ruby these days
-  #
-  # info "Setting up rbenv."
-  # rbenv install 2.6.5 && rbenv global 2.6.5;
-
   # Now let's install nvm and the default global version
-  # We're going with version v14.15.1 for now, but this could be updated at a later time
+  # We're going with version v16.12.0 for now, but this could be updated at a later time
   info "Setting up nvm."
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash;
-  nvm install v14.15.1 && nvm alias default v14.15.1;
+  nvm install v16.12.0 && nvm alias default v16.12.0;
 
   info "Loading macOS preferences. You may need to enter your password."
   zsh ./.osx

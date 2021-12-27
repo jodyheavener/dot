@@ -1,6 +1,6 @@
 # This is where my repos are being stored
 # I would like to put this under Documents, but iCloud mangles it
-alias repos="cd /Users/jodyheavener/Documents/Repositories"
+alias repos="cd /Users/jody/Downloads/Repositories"
 
 # ZSH config
 alias zshconfig="code ~/.zshrc"
@@ -13,16 +13,6 @@ alias findconflicts="grep -lr '<<<<<<<' ."
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
 alias grep='grep --color=auto'
 
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias updateeverything='brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
-
-# Clean up LaunchServices to remove duplicates in the “Open With” menu
-alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
-
-# View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-
 # Recursively delete `.DS_Store` files
 alias cleands="find . -type f -name '*.DS_Store' -ls -delete"
 
@@ -30,22 +20,9 @@ alias cleands="find . -type f -name '*.DS_Store' -ls -delete"
 alias showhidden="defaults write com.apple.finder AppleShowAllFiles 1 && killall Finder"
 alias hidehidden="defaults write com.apple.finder AppleShowAllFiles 0 && killall Finder"
 
-# Show/hide all desktop icons (useful when presenting)
-alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-
 # Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
 # (useful when executing time-consuming commands)
 alias ding="tput bel"
 
-# Lock the screen (when going AFK)
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
 # Edit /etc/hosts file
 alias hosts="sudo code /private/etc/hosts"
-
-# Run a Rails command with Foreman so you can use env vars
-alias fr="foreman run rails"
-
-# LLVM
-export PATH="/usr/local/opt/llvm/bin:$PATH"

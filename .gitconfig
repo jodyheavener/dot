@@ -41,7 +41,7 @@
 	program = gpg
 
 [commit]
-	# gpgsign = true
+	gpgsign = true
   template = ~/.git_commit_template
 
 [rerere]

@@ -12,8 +12,6 @@ Thumbs.db
 
 # Logs, databases, caches
 *.log
-*.sql
-*.sqlite
 .sass-cache
 .byebug_history
 
