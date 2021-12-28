@@ -6,7 +6,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/usr/local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/jodyheavener/.oh-my-zsh
+export ZSH=/Users/jody/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -72,18 +72,8 @@ for file in ~/.{aliases,exports,functions}; do
 done;
 unset file;
 
-# Start Rbenv
-eval "$(rbenv init -)"
-
-# Start Pyenv
-eval "$(pyenv init -)"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 autoload -U add-zsh-hook
 add-zsh-hook chpwd load-nvmrc
-load-nvmrc
 
 #SSH
 ssh-add -A 2>/dev/null

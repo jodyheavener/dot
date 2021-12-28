@@ -1,0 +1,59 @@
+type(scope): subject
+
+# Why is this change happening?
+Because:
+
+- ...
+
+# What does this commit change?
+This commit:
+
+- ...
+
+# Uncomment to specify the issue this commit addresses
+# Closes #(issue number)
+
+# Uncomment to specify co-authors
+# Co-authored-by: Jody Heavener <j.heavener@gmail.com>
+# Co-authored-by: Name <name@example.com>
+
+# ## Help ##
+#
+# Commit type
+#
+#  Should be one of:
+#
+#  * feat: A new feature.
+#  * fix: A bug fix.
+#  * docs: Documentation only changes.
+#  * style: Changes that do not affect the meaning of the code
+#           (white-space, formatting, missing semi-colons, etc).
+#  * refactor: A code change that neither fixes a bug or adds a feature.
+#  * perf: A code change that improves performance.
+#  * test: Adding missing tests.
+#  * chore: Changes to the build process or auxiliary tools and
+#           libraries such as documentation generation.
+#
+# Scopes
+#
+#  Could be anything specifying place of the commit change.
+#  For example `oauth`, `fxa-client`, `signup`, `l10n`, etc...
+#
+# Subject
+#
+#  Contains succinct description of the change:
+#
+#  * Use the imperative, present tense: "change", not "changed"/"changes".
+#  * Don't capitalize the first letter.
+#  * No period (.) at the end!
+#
+# Body
+#
+#   * Use as many lines as you like.
+#   * Use 72 characters maximum per line for typical word wrap text.
+#
+# ---
+#
+# * Version: 1.0.0
+# * Updated: 2020-07-16
+# * Licence: Mozilla Public License 2.0 (MPL-2.0)
