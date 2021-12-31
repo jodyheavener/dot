@@ -38,7 +38,7 @@
   lease = push --force-with-lease
 
 [gpg]
-	program = gpg
+	program = /usr/local/bin/gpg
 
 [commit]
 	# gpgsign = true
