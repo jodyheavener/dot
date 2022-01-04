@@ -12,12 +12,12 @@ This commit:
 
 - ...
 
-# Uncomment to specify the issue this commit addresses
+# Uncomment to specify the ticket this commit addresses
 
-# Closes #(issue number)
+# Closes #(ticket number)
 
 # Uncomment to specify co-authors
 
-# Co-authored-by: Jody Heavener <j.heavener@gmail.com>
+# Co-authored-by: Jody Heavener <jody.heavener@agilebits.com>
 
-# Co-authored-by: Name <name@example.com>
+# Co-authored-by: Name <name@agilebits.com>

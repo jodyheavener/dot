@@ -1,12 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-
-# Consider setting your PATH so that /usr/local/bin occurs before /usr/bin.
-export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/jody/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -65,8 +62,22 @@ for file in ~/.{commands,exports}; do
 done;
 unset file;
 
-# Source OP shell plugins
-source ~/.op/plugins.sh
+# Source OP shell plugins (if available)
+if [ -f ~/.op/plugins.sh ]; then
+    source ~/.op/plugins.sh
+fi
 
-# Set up Fast Node Manager
-eval "$(fnm env --use-on-cd)"
+# Set up Fast Node Manager (if available)
+if command -v fnm &> /dev/null; then
+    eval "$(fnm env --use-on-cd)"
+fi
+
+# Set up direnv (if available)
+if command -v direnv &> /dev/null; then
+    eval "$(direnv hook zsh)"
+fi
+
+# Set up Nix (if available)
+if [ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
+    . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+fi

@@ -1,5 +1,5 @@
 # Where repos are stored
-alias repos="cd /Users/jody/Downloads/Repositories"
+alias repos="cd $HOME/Repositories"
 
 # Locate conflicts in git repos
 alias findconflicts="grep -lr '<<<<<<<' ."
@@ -17,9 +17,6 @@ alias hidehidden="defaults write com.apple.finder AppleShowAllFiles 0 && killall
 
 # Edit /etc/hosts file
 alias hosts="sudo code /private/etc/hosts"
-
-# 1Password PATH mods
-alias srcoptoolchain="source $HOME/1password-toolchain-macos/env"
 
 # Applications
 alias ios='open -a /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
