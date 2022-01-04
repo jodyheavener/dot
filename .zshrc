@@ -77,3 +77,6 @@ add-zsh-hook chpwd load-nvmrc
 
 #SSH
 ssh-add -A 2>/dev/null
+
+# Brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
