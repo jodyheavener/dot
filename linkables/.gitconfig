@@ -1,7 +1,7 @@
 [user]
   name = Jody Heavener
-	email = j.heavener@gmail.com
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMv/zItG3udQKlHGsLu/g4TxcQNclMD4ZKFy34jII5hU
+	email = jody.heavener@agilebits.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICo9yTkDWPFsMxxTy5E3Vib/69lBxVI4KZPKQLSu7Y/k
 
 [core]
   excludesfile = ~/.config/git/.gitignore
@@ -65,3 +65,6 @@
 
 [init]
 	defaultBranch = main
+
+[url "ssh://git@ssh.gitlab.1password.io:2227"]
+  insteadOf = https://gitlab.1password.io
