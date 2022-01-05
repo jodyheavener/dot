@@ -45,12 +45,12 @@ function setup() {
   copiable_entries=()
 
   for entry in .[^.]*; do
-    if [[ "${symlinkable_entries[*]}" =~ "${entry}" ]]; then
+    if [[ "${symlinkable_entries[*]}" =~ (^|[[:space:]])"${entry}"($|[[:space:]]) ]]; then
       rm -r -f "$HOME/$entry"
       ln -s "`pwd`/$entry" "$HOME/$entry"
     fi
 
-    if [[ "${copiable_entries[*]}" =~ "${entry}" ]]; then
+    if [[ "${copiable_entries[*]}" =~ (^|[[:space:]])"${entry}"($|[[:space:]]) ]]; then
       rm -r -f "$HOME/$entry"
       cp -r "`pwd`/$entry" "$HOME/$entry"
     fi
