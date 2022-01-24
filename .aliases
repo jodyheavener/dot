@@ -26,3 +26,6 @@ alias ding="tput bel"
 
 # Edit /etc/hosts file
 alias hosts="sudo code /private/etc/hosts"
+
+# NPM
+alias npm-lock="npm install --package-lock-only"

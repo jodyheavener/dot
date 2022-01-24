@@ -99,3 +99,7 @@ function load-nvmrc() {
     nvm use default
   fi
 }
+
+function npm-latest() {
+  npm outdated | awk 'NR>1 {print $1"@"$4}' | xargs npm install
+}
