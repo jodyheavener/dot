@@ -1,7 +1,6 @@
 [user]
   name = Jody Heavener
 	email = j.heavener@gmail.com
-  # signingkey = UPDATE_ME
 
 [core]
   excludesfile = ~/.gitignore
@@ -28,20 +27,17 @@
 [help]
   autocorrect = 1
 
-[filter "lfs"]
-  required = true
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-
 [alias]
   lease = push --force-with-lease
 
 [gpg]
-	program = /usr/local/bin/gpg
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
 [commit]
-	# gpgsign = true
+	gpgsign = true
   template = ~/.git_commit_template
 
 [rerere]
