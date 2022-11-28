@@ -32,3 +32,6 @@ alias npm-lock="npm install --package-lock-only"
 
 # Yarn
 alias opyarn="op run --env-file=.env -- yarn"
+
+# 1Password PATH mods
+alias srcopcore="source $HOME/1password-toolchain-macos/env"
