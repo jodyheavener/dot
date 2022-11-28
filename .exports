@@ -31,3 +31,6 @@ export PATH="$PATH:$HOME/.cargo/bin"
 
 # RVM
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# Go
+export PATH="$PATH:/usr/local/go/bin"
