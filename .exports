@@ -25,3 +25,9 @@ export CPATH=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/includ
 
 # LLVM
 export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+# Rust
+export PATH="$PATH:$HOME/.cargo/bin"
+
+# RVM
+export PATH="$PATH:$HOME/.rvm/bin"

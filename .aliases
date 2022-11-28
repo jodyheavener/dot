@@ -29,3 +29,6 @@ alias hosts="sudo code /private/etc/hosts"
 
 # NPM
 alias npm-lock="npm install --package-lock-only"
+
+# Yarn
+alias opyarn="op run --env-file=.env -- yarn"
