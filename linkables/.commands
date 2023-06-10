@@ -1,0 +1,86 @@
+# Where repos are stored
+alias repos="cd /Users/jody/Downloads/Repositories"
+
+# Locate conflicts in git repos
+alias findconflicts="grep -lr '<<<<<<<' ."
+
+# Always enable colored `grep` output
+# Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
+alias grep='grep --color=auto'
+
+# Recursively delete `.DS_Store` files
+alias cleands="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Show/hide hidden files in Finder
+alias showhidden="defaults write com.apple.finder AppleShowAllFiles 1 && killall Finder"
+alias hidehidden="defaults write com.apple.finder AppleShowAllFiles 0 && killall Finder"
+
+# Edit /etc/hosts file
+alias hosts="sudo code /private/etc/hosts"
+
+# 1Password PATH mods
+alias srcoptoolchain="source $HOME/1password-toolchain-macos/env"
+
+# Applications
+alias ios='open -a /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
+
+# Make and enter a directory
+function md() {
+  mkdir -p $1
+  cd $1
+}
+
+# Kill whatever is happening on a given port
+function killport() {
+  if [ -z "$1" ]; then
+    echo "Usage: killport [numeric port identifier]" >&2
+    return 1
+  fi
+  lsof -i TCP:$1 | awk '/LISTEN/{print $2}' | xargs kill -9
+  echo "Port" $1 "found and killed."
+}
+
+# Override Git to prevent accidental force pushes
+function git {
+  if [[ "$1" == "push" ]]; then
+    force=false
+    override=false
+
+    for param in "$@"; do
+      if [[ $param == "--force" ]]; then force=true; fi
+      if [[ $param == "--seriously" ]]; then override=true; fi
+    done
+
+    if [[ "$force" = true && "$override" = false ]]; then
+      echo -e "\033[0;33mDetected use of --force! Using --force-with-lease instead. If you're absolutely sure you can override with --force --seriously.\033[0m"
+
+      for param; do
+        [[ "$param" = --force ]] || set -- "$@" "$param"; shift
+      done
+
+      set -- "push" "$@" "--force-with-lease"; shift
+    else
+      if [[ "$override" = true ]]; then
+        echo -e "\033[0;33mHeads up! Using --force and not --force-with-lease.\033[0m"
+      fi
+
+      for param; do
+        [[ "$param" = --seriously ]] || set -- "$@" "$param"; shift
+      done
+    fi
+  fi
+
+  command git "$@"
+}
+
+# Consistent branch creation
+function branch() {
+  git checkout -b jh/$1
+}
+
+# Various Git helpers
+function sts() { git stash save "$1" }
+function sta() { git stash apply stash@{$1} }
+function stl() { git stash list }
+function std() { git stash drop stash@{$1} }
+function grf() { git rebase -i --autosquash }

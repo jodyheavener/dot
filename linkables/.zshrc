@@ -33,7 +33,7 @@ CASE_SENSITIVE="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -55,28 +55,18 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew bundler colorize gem git-extras git heroku)
+plugins=(brew colorize git-extras git 1password vscode)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-
 # Source relevent dotfiles
-for file in ~/.{aliases,exports,functions}; do
+for file in ~/.{commands,exports}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
 
-autoload -U add-zsh-hook
-add-zsh-hook chpwd load-nvmrc
+# Source OP shell plugins
+source ~/.op/plugins.sh
 
-#SSH
-ssh-add -A 2>/dev/null
-
-# Brew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# Set up Fast Node Manager
+eval "$(fnm env --use-on-cd)"

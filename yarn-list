@@ -1,8 +1,0 @@
-# This file does nothing. It's just a list of modules that may need to be installed globally through yarn (or npm).
-
-eslint
-prettier
-typescript
-vsce
-webpack
-webpack-cli

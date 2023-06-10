@@ -1,0 +1,23 @@
+type(scope): subject
+
+# Why is this change happening?
+
+Because:
+
+- ...
+
+# What does this commit change?
+
+This commit:
+
+- ...
+
+# Uncomment to specify the issue this commit addresses
+
+# Closes #(issue number)
+
+# Uncomment to specify co-authors
+
+# Co-authored-by: Jody Heavener <j.heavener@gmail.com>
+
+# Co-authored-by: Name <name@example.com>

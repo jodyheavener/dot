@@ -1,96 +1,117 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 
-# Print various messages
-function info() {
-  printf "\r\033[00;34m[ .. ] »\033[0m $1\n"
+COLOR_GRAY="\033[1;38;5;243m"
+COLOR_BLUE="\033[1;34m"
+COLOR_GREEN="\033[1;32m"
+COLOR_RED="\033[1;31m"
+COLOR_PURPLE="\033[1;35m"
+COLOR_YELLOW="\033[1;33m"
+COLOR_NONE="\033[0m"
+
+LINKABLES_DIR="$(pwd)/linkables"
+
+title() {
+	echo -e "\n${COLOR_PURPLE}$1${COLOR_NONE}"
+	echo -e "${COLOR_GRAY}==============================${COLOR_NONE}\n"
 }
 
-function notice() {
-  printf "\r\033[0;33m[ ?? ] »\033[0m $1\n"
+info() {
+	echo -e "${COLOR_BLUE}Info: ${COLOR_NONE}$1"
 }
 
-function success() {
-  printf "\r\033[00;32m[ !! ] »\033[0m $1\n"
+success() {
+	echo -e "${COLOR_GREEN}$1${COLOR_NONE}"
 }
 
-# Main setup function
-function setup() {
-  # Set up ohmyzsh
-  info "Installing Oh My Zsh..."
-  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  # FIXME: Exits after this?
-
-  # Install Xcode for its dev tools if it's not installed
-  if ! xcode-select -p > /dev/null; then
-    info "Installing Xcode..."
-    xcode-select --install
-    read -n 1 -s -r -p "Press any key to continue when Xcode install is completed."
-  fi
-
-  # Install Homebrew if it's not installed
-  if [ ! -f "/usr/local/bin/brew" ]; then
-    info "Installing Brew..."
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  fi
-
-  # Install a pre-generated set of brew packages
-  # Want to update this? Run `brew list > brew-list`
-  # FIXME: fine-tune this list
-  # cat brew-list | xargs brew install
-  # info "Brew packages have been installed."
-
-  # Symlink/copy all the things
-  info "Symlinking and copying dotfiles."
-  symlinkable_entries=(.aliases .exports .functions .gitconfig .gitignore .zshrc .git_commit_template)
-  copiable_entries=()
-
-  for entry in .[^.]*; do
-    if [[ "${symlinkable_entries[*]}" =~ (^|[[:space:]])"${entry}"($|[[:space:]]) ]]; then
-      rm -r -f "$HOME/$entry"
-      ln -s "`pwd`/$entry" "$HOME/$entry"
-    fi
-
-    if [[ "${copiable_entries[*]}" =~ (^|[[:space:]])"${entry}"($|[[:space:]]) ]]; then
-      rm -r -f "$HOME/$entry"
-      cp -r "`pwd`/$entry" "$HOME/$entry"
-    fi
-  done
-
-  # Now let's install nvm and the default global version
-  # We're going with version v16.12.0 for now, but this could be updated at a later time
-  info "Setting up nvm."
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-  # FIXME: nvm not available after this?
-  nvm install v16.12.0 && nvm alias default v16.12.0;
-
-  info "Loading macOS preferences. You may need to enter your password."
-  # FIXME: fine tune this
-  zsh ./.osx
-  info "macOS preferences updated. A restart is recommended."
-
-  info "Reloading ZSH..."
-  exec zsh;
-
-  success "All done!"
-  info "You may also want to set up SSH keys (+ Git signing key), install Yarn packages (yarn-list), and install some apps (apps-list)."
+create_parent_directories() {
+	target_path=$1
+	parent_dir=$(dirname "$target_path")
+	mkdir -p "$parent_dir"
 }
 
-# macOS Only
-[[ "$OSTYPE" =~ ^darwin ]] || return 1;
+setup_homebrew() {
+	title "Setting up Homebrew"
 
-# Let's get going!
-success "Welcome to Jody's macOS setup."
-notice "This script will symlink dotfiles, prepare default configurations, modify OS behaviour, and install a handful of other handy tools."
-notice "Important: the symlinking process will overwrite any existing dotfiles of the same name, and the OS configuration can change how your system runs."
-notice "Important: dotfiles are symlinked from this repo, so this repo needs to remain in place for continued usage."
+	if test ! "$(command -v brew)"; then
+		info "Homebrew not installed. Installing."
+		NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	fi
 
-# FIXME: this doesn't work
-read -p "Are you absolutely sure you want to continue? (Yn)" -n 1;
+	brew bundle -v
+}
 
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  echo "";
-  info "Sounds good. Let's go!"
-  setup;
-fi;
+setup_shell() {
+	title "Configuring shell"
 
-unset setup;
+	[[ -n "$(command -v brew)" ]] && zsh_path="$(brew --prefix)/bin/zsh" || zsh_path="$(which zsh)"
+
+	if ! grep "$zsh_path" /etc/shells; then
+		info "adding $zsh_path to /etc/shells"
+		echo "$zsh_path" | sudo tee -a /etc/shells
+	fi
+
+	if [[ "$SHELL" != "$zsh_path" ]]; then
+		chsh -s "$zsh_path"
+		info "default shell changed to $zsh_path"
+	fi
+
+	if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
+		info "Oh My Zsh no installed. Installing."
+		sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	fi
+}
+
+setup_symlinks() {
+	title "Creating symlinks"
+
+	for file in $(find "$LINKABLES_DIR" -type f); do
+		filename=${file#$LINKABLES_DIR/}
+		target="$HOME/$filename"
+
+		if [ -e "$target" ]; then
+			info "~${target#$HOME} already exists... skipping."
+		else
+			info "creating symlink for $filename"
+			create_parent_directories "$target"
+			ln -s "$file" "$target"
+		fi
+	done
+}
+
+setup_macos() {
+	title "Configuring macOS"
+
+	info "you may need to enter your password"
+
+	zsh ./.osx
+
+	info "macOS preferences updated. A restart is recommended."
+}
+
+case "$1" in
+	brew)
+		setup_homebrew
+		;;
+	shell)
+		setup_shell
+		;;
+	link)
+		setup_symlinks
+		;;
+	macos)
+	    setup_macos
+	    ;;
+	all)
+		setup_homebrew
+		setup_symlinks
+		setup_shell
+		setup_macos
+		;;
+	*)
+		echo -e $"\nUsage: $(basename "$0") [brew|shell|link|macos|all]\n"
+		exit 1
+		;;
+esac
+
+echo -e
+success "Done."
