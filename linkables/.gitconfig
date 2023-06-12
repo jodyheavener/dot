@@ -4,7 +4,7 @@
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMv/zItG3udQKlHGsLu/g4TxcQNclMD4ZKFy34jII5hU
 
 [core]
-  excludesfile = ~/config/git/.gitignore
+  excludesfile = ~/.config/git/.gitignore
   editor = code -r -w
 
 [color]
@@ -58,7 +58,7 @@
 
 [commit]
 	gpgsign = true
-  template = ~/config/git/.git_commit_template
+  template = ~/.config/git/.git_commit_template
 
 [rerere]
 	enabled = true
