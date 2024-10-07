@@ -33,7 +33,7 @@ CASE_SENSITIVE="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -59,7 +59,7 @@ plugins=(brew colorize git-extras git 1password vscode)
 
 source $ZSH/oh-my-zsh.sh
 
-# Source relevent dotfiles
+# Source relevant dotfiles
 for file in ~/.{commands,exports}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
