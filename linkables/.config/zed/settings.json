@@ -1,0 +1,51 @@
+{
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-3.7-sonnet-thought"
+    },
+    "version": "2"
+  },
+  "icon_theme": "Material Icon Theme",
+  "base_keymap": "VSCode",
+  "ui_font_size": 16,
+  "buffer_font_size": 12,
+  "buffer_font_family": "Victor Mono",
+  "buffer_font_weight": 500,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "terminal": {
+    "dock": "right",
+    "copy_on_select": true
+  },
+  "when_closing_with_no_tabs": "keep_window_open",
+  "indent_guides": {
+    "coloring": "indent_aware"
+  },
+  "project_panel": {
+    "dock": "right",
+    "folder_icons": false,
+    "indent_size": 15
+  },
+  "outline_panel": {
+    "default_width": 100
+  },
+  "calls": {
+    "mute_on_join": true,
+    "share_on_join": false
+  },
+  "languages": {
+    "Swift": {
+      "enable_language_server": true,
+      "language_servers": ["sourcekit-lsp"],
+      "formatter": "language_server",
+      "format_on_save": "on"
+    }
+  }
+}

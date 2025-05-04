@@ -1,0 +1,8 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-d": "terminal_panel::ToggleFocus"
+    }
+  }
+]
