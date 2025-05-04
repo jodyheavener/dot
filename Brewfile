@@ -1,7 +1,3 @@
-# Taps
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-
 # Applications + system
 cask "1password/tap/1password-cli" # useful for secret management and ssh
 cask "figma" # design tool
@@ -10,7 +6,6 @@ cask "imageoptim" # a better terminal emulator
 cask "insomnia" # tool for working with apis
 
 # Packages
-brew "exa" # ls alternative
 brew "fd" # find alternative
 brew "fnm" # Fast Node version manager
 brew "gh" # GitHub CLI
